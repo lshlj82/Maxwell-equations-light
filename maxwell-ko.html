@@ -140,6 +140,9 @@ svg.drag{touch-action:none;cursor:grab}
 .card h3{margin:0;font-size:17px}
 .card p{margin:0;font-size:15px}
 .chip{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-left:6px;border:1px solid var(--line)}
+.sqrt{display:inline-block;position:relative;padding-left:.6em;margin-left:.06em;white-space:nowrap}
+.sqrt::before{content:"";position:absolute;left:0;top:0;bottom:.02em;width:.63em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 24' preserveAspectRatio='none'%3E%3Cpath d='M0 14.2L3.4 12.3L6.9 20.1L11 0H12V1.5H11.95L7.5 23.6H6.3L2.8 15.3L.7 16.3Z'/%3E%3C/svg%3E") no-repeat 0 0/100% 100%;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 24' preserveAspectRatio='none'%3E%3Cpath d='M0 14.2L3.4 12.3L6.9 20.1L11 0H12V1.5H11.95L7.5 23.6H6.3L2.8 15.3L.7 16.3Z'/%3E%3C/svg%3E") no-repeat 0 0/100% 100%}
+.sqrt>span{display:inline-block;border-top:.075em solid currentColor;padding:.1em .1em 0 .05em;line-height:1.15}
 </style>
 </head>
 <body>
@@ -187,7 +190,7 @@ svg.drag{touch-action:none;cursor:grab}
 
 <section id="s5"><h2><span class="n">5</span><span data-i18n="h5"></span></h2>
   <div class="prose"><p data-i18n="p5a"></p><p data-i18n="p5b"></p></div>
-  <div class="key"><span><span class="frac"><span>d<i>x</i></span><span>d<i>t</i></span></span> = <span class="frac"><span><i>ω</i></span><span><i>k</i></span></span> = <i>c</i></span><span><span class="frac"><span>∂<i>E</i></span><span>∂<i>x</i></span></span> = −<span class="frac"><span>∂<i>B</i></span><span>∂<i>t</i></span></span></span><span>−<span class="frac"><span>∂<i>B</i></span><span>∂<i>x</i></span></span> = <i>μ</i><sub>0</sub><i>ε</i><sub>0</sub><span class="frac"><span>∂<i>E</i></span><span>∂<i>t</i></span></span></span><span><i>c</i> = <span class="frac"><span>1</span><span>√(<i>ε</i><sub>0</sub><i>μ</i><sub>0</sub>)</span></span></span></div>
+  <div class="key"><span><span class="frac"><span>d<i>x</i></span><span>d<i>t</i></span></span> = <span class="frac"><span><i>ω</i></span><span><i>k</i></span></span> = <i>c</i></span><span><span class="frac"><span>∂<i>E</i></span><span>∂<i>x</i></span></span> = −<span class="frac"><span>∂<i>B</i></span><span>∂<i>t</i></span></span></span><span>−<span class="frac"><span>∂<i>B</i></span><span>∂<i>x</i></span></span> = <i>μ</i><sub>0</sub><i>ε</i><sub>0</sub><span class="frac"><span>∂<i>E</i></span><span>∂<i>t</i></span></span></span><span><i>c</i> = <span class="frac"><span>1</span><span><span class='sqrt'><span><i>ε</i><sub>0</sub><i>μ</i><sub>0</sub></span></span></span></span></span></div>
   <div class="sim"><div class="viz"><svg id="v5" viewBox="0 0 440 200" role="img" aria-label="Point of constant phase moving with the wave"></svg>
     <div class="boxed"><h3 data-i18n="cH"></h3><div class="small" data-i18n="cP"></div><dl class="read" id="cRead"></dl></div></div><div class="controls" id="c5"></div></div>
 </section>
@@ -240,7 +243,7 @@ ko:{
  m4h:"앙페르–맥스웰 법칙",m4p:"자기장은 전류 주위를, 그리고 변하는 전기다발(변위전류) 주위를 감싸 돕니다.",
  h4:"전자기파",
  p4a:"전기장은 자기장을, 자기장은 전기장을 만들 수 있습니다. 서로를 만들어 내며 공간을 진행하는 것이 전자기파입니다. 고정된 점 P에서 수직 방향 전기장과 수평 방향 자기장의 크기가 함께 커졌다 작아집니다: <i>E</i> = <i>E</i><sub>m</sub> sin(<i>kx</i> − <i>ωt</i>), <i>B</i> = <i>B</i><sub>m</sub> sin(<i>kx</i> − <i>ωt</i>). <b>E</b>와 <b>B</b>는 서로 수직이고 진행 방향에도 수직입니다.",
- p4b:"전자기파 발생 장치에서는 에너지원이 LC 진동자를 자연 각진동수 <i>ω</i> = 1/√(<i>LC</i>)로 진동시키고, 변압기와 송신선을 거쳐 전기쌍극자 안테나의 전하를 앞뒤로 움직입니다. 그러면 파동이 멀리 있는 점까지 진행합니다. 파장 <i>λ</i> = 2π/<i>k</i>는 공간에서 한 주기의 “길이”를 나타내는 물리량입니다. 파면 사이의 간격이 <i>λ</i>이고, 광선은 진행 방향을 가리킵니다.",
+ p4b:"전자기파 발생 장치에서는 에너지원이 LC 진동자를 자연 각진동수 <i>ω</i> = 1/<span class='sqrt'><span><i>LC</i></span></span>로 진동시키고, 변압기와 송신선을 거쳐 전기쌍극자 안테나의 전하를 앞뒤로 움직입니다. 그러면 파동이 멀리 있는 점까지 진행합니다. 파장 <i>λ</i> = 2π/<i>k</i>는 공간에서 한 주기의 “길이”를 나타내는 물리량입니다. 파면 사이의 간격이 <i>λ</i>이고, 광선은 진행 방향을 가리킵니다.",
  pause:"일시정지",play:"재생",freqLog:"진동수 <i>f</i>",emax:"전기장 진폭 <i>E</i><sub>m</sub>",
  rBand:"스펙트럼 영역",rLam:"파장 <i>λ</i> = <i>c</i>/<i>f</i>",rW:"<i>ω</i> = 2π<i>f</i>",rK:"<i>k</i> = 2π/<i>λ</i>",rBm:"자기장 진폭 <i>B</i><sub>m</sub> = <i>E</i><sub>m</sub>/<i>c</i>",
  bands:["감마선","X선","자외선","가시광선","적외선","마이크로파","전파"],
@@ -248,10 +251,10 @@ ko:{
  atP:"점 P에서 파원 쪽을 바라본 모습 (파동이 나를 향해 진행)",
  h5:"파동의 속력",
  p5a:"파동은 얼마나 빨리 진행할까요? 위상 <i>kx</i> − <i>ωt</i>가 일정한 지점이 움직이는 속력을 보면 됩니다. <i>kx</i> − <i>ωt</i> = 상수를 <i>t</i>로 미분하면 <i>k</i> d<i>x</i>/d<i>t</i> − <i>ω</i> = 0이므로 d<i>x</i>/d<i>t</i> = <i>ω</i>/<i>k</i>입니다. 전자기파(빛)에서 이 속력이 <i>c</i> ≈ 3.0 × 10<sup>8</sup> m/s입니다.",
- p5b:"놀랍게도 <i>c</i>는 이미 배운 상수 두 개로 정해집니다: <i>c</i> = 1/√(<i>ε</i><sub>0</sub><i>μ</i><sub>0</sub>). 간단히 요약하면, 패러데이 유도 법칙에서 ∂<i>E</i>/∂<i>x</i> = −∂<i>B</i>/∂<i>t</i>, 맥스웰 유도 법칙에서 −∂<i>B</i>/∂<i>x</i> = <i>μ</i><sub>0</sub><i>ε</i><sub>0</sub>∂<i>E</i>/∂<i>t</i>를 얻습니다. 사인파를 대입하고 정리하면 첫째 식은 <i>E</i><sub>m</sub>/<i>B</i><sub>m</sub> = <i>c</i>, 둘째 식은 <i>B</i><sub>m</sub>/<i>E</i><sub>m</sub> = 1/(<i>μ</i><sub>0</sub><i>ε</i><sub>0</sub><i>c</i>)이므로 <i>c</i> = 1/√(<i>ε</i><sub>0</sub><i>μ</i><sub>0</sub>)입니다.",
+ p5b:"놀랍게도 <i>c</i>는 이미 배운 상수 두 개로 정해집니다: <i>c</i> = 1/<span class='sqrt'><span><i>ε</i><sub>0</sub><i>μ</i><sub>0</sub></span></span>. 간단히 요약하면, 패러데이 유도 법칙에서 ∂<i>E</i>/∂<i>x</i> = −∂<i>B</i>/∂<i>t</i>, 맥스웰 유도 법칙에서 −∂<i>B</i>/∂<i>x</i> = <i>μ</i><sub>0</sub><i>ε</i><sub>0</sub>∂<i>E</i>/∂<i>t</i>를 얻습니다. 사인파를 대입하고 정리하면 첫째 식은 <i>E</i><sub>m</sub>/<i>B</i><sub>m</sub> = <i>c</i>, 둘째 식은 <i>B</i><sub>m</sub>/<i>E</i><sub>m</sub> = 1/(<i>μ</i><sub>0</sub><i>ε</i><sub>0</sub><i>c</i>)이므로 <i>c</i> = 1/<span class='sqrt'><span><i>ε</i><sub>0</sub><i>μ</i><sub>0</sub></span></span>입니다.",
  lam5:"파장 <i>λ</i>",f5:"진동수 <i>f</i>",rV5:"표시된 마루의 속력 <i>v</i> = <i>ω</i>/<i>k</i> = <i>λf</i>",arbU:"(화면 단위)",
  cH:"ε₀와 μ₀로 c 계산하기",cP:"상수를 바꾸면 다른 우주에서 c가 어떻게 달라질지 볼 수 있습니다. ×1이면 실제 빛의 속력이 나옵니다.",
- epsM:"<i>ε</i><sub>0</sub> 배수",muM:"<i>μ</i><sub>0</sub> 배수",rEps:"<i>ε</i><sub>0</sub>",rMu:"<i>μ</i><sub>0</sub>",rC:"<i>c</i> = 1/√(<i>ε</i><sub>0</sub><i>μ</i><sub>0</sub>)",
+ epsM:"<i>ε</i><sub>0</sub> 배수",muM:"<i>μ</i><sub>0</sub> 배수",rEps:"<i>ε</i><sub>0</sub>",rMu:"<i>μ</i><sub>0</sub>",rC:"<i>c</i> = 1/<span class='sqrt'><span><i>ε</i><sub>0</sub><i>μ</i><sub>0</sub></span></span>",
  h6:"파장과 간섭",
  p6:"파장이 같은 두 전자기파(빛)의 이동 경로에 차이가 생기면, 한 파동이 다른 파동에 대해 밀려납니다. 마루와 마루가 만나면 서로 보강하고(보강간섭), 마루와 골이 만나면 서로 상쇄합니다(상쇄간섭). 경로차가 파장의 정수배이면 보강간섭, 반파장의 홀수배이면 상쇄간섭이 일어납니다.",
  dL:"경로차 Δ<i>L</i>",toCon:"Δ<i>L</i> = λ",toDes:"Δ<i>L</i> = λ/2",
